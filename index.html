@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./node_modules/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script> -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPnikzCrsfqEPQPMq4bSiJhum6LNSAKLU&libraries=places"></script>
+    <title>E2ECAV</title>
+  </head>
+  <body>
+    <div style="height:100vh; overflow-x: hidden;" class="mw-100">
+      <div id="map" style="height:90%!important;">
+        <section id="header">
+          <div class="overlay rounded-lg row">
+              <div class="col-3">
+                <h1 class="app-title">LiTrans <br/>OBU</h1>
+              </div>
+              <div class="col-9">
+                <aside id="displayMain">
+                  <div class="row">
+                    <div class="col">
+                      <h2 class="currentRoute">
+                        <span id="titleOrigin">Henri-Bourassa</span>
+                        <i class="fa fa-arrow-circle-up fa-2x text-white"></i>
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="row float-right">
+                    <div class="col">
+                      <h2 class="nextRoute">
+                        <span class="action">towards</span> 
+                        <span id="titleDestination">St. Catherine</span></h2>
+                    </div>
+                  </div>
+                </aside>
+                <aside class="row" id="search">
+                  <input type="text" id="originInput" class="form-control mt-3 mb-1 row location" placeholder="Enter starting location" />
+                  <input type="text" id="destinationInput" class="form-control row location" placeholder="Where to?" />
+                </aside>
+              </div>
+          </div>
+        </section>
+        <section id="velocity">
+          <p class="overlay-speed rounded bg-light border border-success shadow text-center">
+            <span style="font-weight: bolder; color: tomato; font-size: large;" id="timeLabel">6 min</span> 
+            <br/> <span style="font-size: medium;" id="distanceLabel">1.2 km</span>
+          </p>
+        </section>
+      </div>
+      <div id="footer" style="height:10%!important; box-shadow: inset 0 3px 6px rgba(0,0,0,0.16), 0 4px 6px rgba(0,0,0,0.45);" class="bg-success">
+        <div class="row text-center" style="padding: 10px;">
+          <div class="col-3">
+            <button class="btn btn-outline-light rounded shadow">
+              <i class="fa fa-home fa-2x" title="Home"></i></button> 
+          </div>
+          <div class="col-3">
+            <button class="btn btn-outline-light rounded shadow" id="btnLocation">
+              <i class="fa fa-location-arrow fa-2x" title="Home"></i></button> 
+          </div>
+          <div class="col-3">
+            <button class="btn btn-outline-light rounded shadow">
+              <i class="fa fa-map-signs fa-2x" title="Home"></i></button> 
+          </div>
+          <div class="col-3">
+            <button class="btn btn-outline-light rounded shadow">
+              <i class="fa fa-bar-chart fa-2x" title="Home" aria-hidden="true"></i></button> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./assets/js/map.js"></script>
+  </body>
+</html>
